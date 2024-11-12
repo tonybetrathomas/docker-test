@@ -8,7 +8,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Run stage
-FROM amazoncorretto:8u432-alpine3.20-jre
+FROM amazoncorretto:8u432-alpine3.17-jre
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8081
